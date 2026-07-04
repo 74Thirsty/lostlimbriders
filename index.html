@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost Limb Riders</title>
+<style>
+:root{--orange:#ff6a00;--black:#050505;--charcoal:#111;--steel:#9aa0a6;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050505;color:white;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;padding:48px 7vw;background:
+linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.68),rgba(0,0,0,.98)),
+radial-gradient(circle at 72% 25%,rgba(255,106,0,.38),transparent 34%),
+url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2000&q=90") center/cover}
+.hero-inner{max-width:1200px;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.badge{display:inline-block;border:1px solid var(--orange);color:var(--orange);padding:10px 16px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:3px}
+h1{font-size:clamp(56px,10vw,128px);line-height:.82;margin:24px 0;text-transform:uppercase;letter-spacing:-5px}
+h1 span,.orange{color:var(--orange)}
+.lead{font-size:clamp(18px,2.1vw,26px);line-height:1.45;color:#ddd;max-width:760px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;padding:16px 24px;border-radius:14px;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
+.btn-primary{background:var(--orange);color:#111}
+.btn-secondary{border:1px solid #555;color:white;background:rgba(255,255,255,.07)}
+.panel{background:rgba(10,10,10,.78);border:1px solid rgba(255,255,255,.13);border-radius:30px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.65);backdrop-filter:blur(18px)}
+.panel h2{font-size:36px;margin:0 0 20px;text-transform:uppercase}
+.check{display:flex;gap:12px;margin:18px 0;color:#ddd;font-size:17px}
+.check b{color:var(--orange)}
+section{padding:90px 7vw}
+.wrap{max-width:1200px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:linear-gradient(145deg,#151515,#080808);border:1px solid #292929;border-radius:26px;padding:30px;box-shadow:0 22px 60px rgba(0,0,0,.35)}
+.card h3{color:var(--orange);font-size:25px;margin-top:0}
+.card p{color:#aaa;line-height:1.6;font-size:17px}
+.statement{text-align:center;background:linear-gradient(135deg,#191919,#070707);border-top:1px solid #222;border-bottom:1px solid #222}
+.statement h2{font-size:clamp(38px,6vw,82px);line-height:.95;margin:0;text-transform:uppercase}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+input,textarea{width:100%;padding:16px;border-radius:14px;background:#090909;border:1px solid #333;color:white;font-size:16px}
+textarea{grid-column:1/-1;min-height:130px}
+button{grid-column:1/-1;padding:18px;border:0;border-radius:14px;background:var(--orange);font-weight:900;font-size:16px;text-transform:uppercase;cursor:pointer}
+footer{padding:34px 7vw;text-align:center;color:#777;border-top:1px solid #1d1d1d}
+@media(max-width:880px){.hero-inner,.grid,.split,.form{grid-template-columns:1fr}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge">AMPUTEES • RIDERS • PURPOSE</div>
+      <h1>Lost Limb <span>Riders</span></h1>
+      <p class="lead">A nonprofit motorcycle club founded by amputees for amputees. We ride for freedom, confidence, brotherhood, sisterhood, and the people who refuse to quit.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#join">Become a Member</a>
+        <a class="btn btn-secondary" href="#keynote">Book John</a>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Lost Limbs.<br><span class="orange">Found Freedom.</span></h2>
+      <div class="check"><b>✓</b> Support amputees rebuilding independence</div>
+      <div class="check"><b>✓</b> Build community through motorcycle culture</div>
+      <div class="check"><b>✓</b> Ride with purpose and never ride alone</div>
+      <div class="check"><b>✓</b> Never give up. Never back down.</div>
+    </div>
+  </div>
+</header>
+
+<section id="mission">
+  <div class="wrap grid">
+    <div class="card"><h3>Brotherhood & Sisterhood</h3><p>Real connection for amputees, families, riders, veterans, supporters, and anyone who believes healing is stronger together.</p></div>
+    <div class="card"><h3>Ride With Purpose</h3><p>Every ride, event, fundraiser, and conversation exists to raise awareness and support people adapting to life after limb loss.</p></div>
+    <div class="card"><h3>Build Community</h3><p>Lost Limb Riders helps amputees find confidence, dignity, friendship, and the courage to keep moving forward.</p></div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <h2>Amputees Don’t Quit.<br><span class="orange">They Just Shift Gears.</span></h2>
+  </div>
+</section>
+
+<section id="keynote">
+  <div class="wrap split">
+    <div class="card">
+      <h3>Book John Thompson</h3>
+      <p>John’s keynote, <b>I Can. I Will.</b>, is a raw, funny, powerful story of limb loss, survival, faith, family, recovery, phantom pain, prosthetics, and finding purpose after life changes forever.</p>
+      <p>Ideal for nonprofit events, hospitals, rehab centers, motorcycle events, schools, recovery groups, veteran groups, and amputee support programs.</p>
+      <a class="btn btn-primary" href="tel:15158905765">Call 515-890-5765</a>
+    </div>
+    <div class="card">
+      <h3>Purchase the Autobiography</h3>
+      <p>John’s upcoming autobiography tells the full story behind Lost Limb Riders — the setbacks, the humor, the fight, the family, and the mission to help other amputees know they are not alone.</p>
+      <a class="btn btn-secondary" href="#join">Request Book Info</a>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap panel">
+    <h2>Become Part of the Ride</h2>
+    <p class="lead">Interested in joining, volunteering, sponsoring, booking John, or getting book updates? Reach out and connect with Lost Limb Riders.</p>
+    <form onsubmit="event.preventDefault();alert('Call or text 515-890-5765 to connect with Lost Limb Riders.');">
+      <div class="form">
+        <input placeholder="Your name" required>
+        <input placeholder="Phone or email" required>
+        <textarea placeholder="Tell us how you want to be involved"></textarea>
+        <button>Connect With Lost Limb Riders</button>
+      </div>
+    </form>
+    <p style="color:#aaa;margin-top:24px;font-size:22px">Call/Text: <b style="color:#ff6a00">515-890-5765</b></p>
+  </div>
+</section>
+
+<footer>
+  LOST LIMB RIDERS Motorcycle Club • Ride With Purpose • Support Amputees • Build Community • Never Give Up
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>
