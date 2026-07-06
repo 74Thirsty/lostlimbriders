@@ -1,378 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lost Limb Riders</title>
-<link rel="icon" type="image/png" href="assets/logo-nobg.png">
-<link rel="apple-touch-icon" href="assets/logo-nobg.png">
-<style>
-:root{--orange:#f26a21;--gold:#f6b23c;--red:#b83224;--black:#050505;--charcoal:#111;--steel:#9aa0a6;--white:#fff;--green:#34d399}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#050505;color:white;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-.hero{min-height:100vh;display:flex;align-items:center;padding:48px 7vw;background:
-linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.68),rgba(0,0,0,.98)),
-radial-gradient(circle at 72% 25%,rgba(246,178,60,.34),transparent 34%),
-radial-gradient(circle at 45% 80%,rgba(184,50,36,.24),transparent 32%),
-url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2000&q=90") center/cover}
-.hero-inner{max-width:900px;width:100%;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
-.brand-mark{width:min(260px,52vw);display:block;margin:0 0 18px;filter:drop-shadow(0 18px 28px rgba(0,0,0,.65))}
-.badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:10px 16px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:3px}
-h1{font-size:clamp(56px,10vw,128px);line-height:.82;margin:24px 0;text-transform:uppercase;letter-spacing:-5px}
-h1 span,.orange{color:var(--orange)}
-.lead{font-size:clamp(18px,2.1vw,26px);line-height:1.45;color:#ddd;max-width:760px}
-.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
-.btn{display:inline-block;padding:16px 24px;border-radius:14px;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
-.btn-primary{background:linear-gradient(135deg,var(--gold),var(--orange));color:#111;box-shadow:0 14px 34px rgba(242,106,33,.24)}
-.btn-secondary{border:1px solid #555;color:white;background:rgba(255,255,255,.07)}
-.panel{background:rgba(10,10,10,.78);border:1px solid rgba(255,255,255,.13);border-radius:30px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.65);backdrop-filter:blur(18px)}
-.panel h2{font-size:36px;margin:0 0 20px;text-transform:uppercase}
-.check{display:flex;gap:12px;margin:18px 0;color:#ddd;font-size:17px}
-.check b{color:var(--orange)}
-section{padding:90px 7vw}
-.wrap{max-width:1200px;margin:auto}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:linear-gradient(145deg,#151515,#080808);border:1px solid #292929;border-radius:26px;padding:30px;box-shadow:0 22px 60px rgba(0,0,0,.35)}
-.card h3{color:var(--gold);font-size:25px;margin-top:0}
-.card p{color:#aaa;line-height:1.6;font-size:17px}
-.statement{text-align:center;background:linear-gradient(135deg,#191919,#070707);border-top:1px solid #222;border-bottom:1px solid #222}
-.statement h2{font-size:clamp(38px,6vw,82px);line-height:.95;margin:0;text-transform:uppercase}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-input,textarea{width:100%;padding:16px;border-radius:14px;background:#090909;border:1px solid #333;color:white;font-size:16px}
-textarea{grid-column:1/-1;min-height:130px}
-button{grid-column:1/-1;padding:18px;border:0;border-radius:14px;background:var(--orange);font-weight:900;font-size:16px;text-transform:uppercase;cursor:pointer}
-select{width:100%;padding:16px;border-radius:14px;background:#090909;border:1px solid #333;color:white;font-size:16px}
-.full{grid-column:1/-1}.status{grid-column:1/-1;color:var(--green);font-weight:800;min-height:22px}.guestbook-list{display:grid;gap:14px;margin-top:24px}.guestbook-entry{border:1px solid #333;border-radius:18px;padding:18px;background:rgba(255,255,255,.04)}.guestbook-entry b{color:var(--gold)}.guestbook-entry small{display:block;color:#888;margin-top:8px}.mini-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.help{color:#aaa;font-size:14px;line-height:1.5}.section-title{font-size:clamp(34px,5vw,64px);margin:0 0 18px;text-transform:uppercase}
-.book-card{display:grid;grid-template-columns:minmax(150px,240px) 1fr;gap:24px;align-items:center}
-.book-feature{align-self:start;position:sticky;top:28px}
-.book-feature h2{font-size:34px;margin:0 0 14px;text-transform:uppercase}
-.admin-only{display:none}
-body.guestbook-admin .admin-only{display:flex}
-.book-cover{width:100%;border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.62);border:1px solid rgba(246,178,60,.35)}
-footer{padding:34px 7vw;text-align:center;color:#777;border-top:1px solid #1d1d1d}
-@media(max-width:880px){.hero-inner,.grid,.split,.form,.book-card{grid-template-columns:1fr}h1{letter-spacing:-2px}.brand-mark{margin-inline:auto}.book-cover{max-width:320px;margin:auto}.book-feature{position:static}}
-</style>
+    <meta charset="UTF-8">
+    <title>Lost Limb Riders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
-<header class="hero">
-  <div class="hero-inner">
-    <div>
-      <img class="brand-mark" src="assets/logo-nobg.png" alt="Lost Limb Riders logo">
-      <div class="badge">AMPUTEES • RIDERS • PURPOSE</div>
-      <h1>Lost Limb <span>Riders</span></h1>
-      <p class="lead">A nonprofit motorcycle club founded by amputees for amputees. We ride for freedom, confidence, brotherhood, sisterhood, and the people who refuse to quit.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#guestbook">Sign the Guest Book</a>
-        <a class="btn btn-secondary" href="#book-show">Book John</a>
-      </div>
+<section>
+    <ul>
+        <li>How ordinary people accomplish extraordinary things by refusing to quit.</li>
+    </ul>
+
+    <hr>
+
+    <h4>Perfect For</h4>
+
+    <div class="two-column">
+        <ul class="speaker-list">
+            <li>Hospitals & Rehabilitation Centers</li>
+            <li>Healthcare Conferences</li>
+            <li>Nonprofit Organizations</li>
+            <li>Schools & Universities</li>
+            <li>Veterans Organizations</li>
+            <li>Corporate Leadership Events</li>
+        </ul>
+
+        <ul class="speaker-list">
+            <li>Recovery & Addiction Programs</li>
+            <li>Churches & Faith-Based Events</li>
+            <li>Motorcycle Rallies & Charity Events</li>
+            <li>Disability Advocacy Organizations</li>
+            <li>First Responders</li>
+            <li>Community Organizations</li>
+        </ul>
     </div>
-  </div>
-</header>
 
-<section id="mission">
-  <div class="wrap grid">
-    <div class="card"><h3>Brotherhood & Sisterhood</h3><p>Real connection for amputees, families, riders, veterans, supporters, and anyone who believes healing is stronger together.</p></div>
-    <div class="card"><h3>Ride With Purpose</h3><p>Every ride, event, fundraiser, and conversation exists to raise awareness and support people adapting to life after limb loss.</p></div>
-    <div class="card"><h3>Build Community</h3><p>Lost Limb Riders helps amputees find confidence, dignity, friendship, and the courage to keep moving forward.</p></div>
-  </div>
+    <hr>
+
+    <h4>More Than a Motivational Speaker</h4>
+
+    <p>John doesn't deliver rehearsed clichés or empty motivation.</p>
+    <p>He delivers a message earned through experience—one that challenges people to stop focusing on what they've lost and start discovering what's still possible.</p>
+
+    <div class="quote-box">
+        <h2>"I Can. I Will."</h2>
+        <p>Because the only word that doesn't belong in your vocabulary is <strong>“can't.”</strong></p>
+    </div>
+
+    <a class="btn btn-primary" href="tel:15158905765">Book John Thompson • Call 515‑890‑5765</a>
 </section>
 
-<section class="statement">
-  <div class="wrap">
-    <h2>Amputees Don’t Quit.<br><span class="orange">They Just Shift Gears.</span></h2>
-  </div>
-</section>
-
-<section id="keynote">
-  <div class="wrap split">
-    <div class="card">
-
-  <h3>Book John Thompson</h3>
-
-  <p class="highlight">
-    <strong>"I Can. I Will."</strong> isn't just a speech—it's a challenge to every person in the room.
-  </p>
-
-  <p>
-    John Thompson doesn't step onto the stage to talk about what he lost.
-    He speaks about what he found.
-  </p>
-
-  <p>
-    After losing his leg, facing chronic pain, addiction, depression, financial hardship, and
-    countless setbacks, John refused to let one word define his future:
-  </p>
-
-  <blockquote class="quote">
-    <strong>Can't.</strong>
-  </blockquote>
-
-  <p>
-    Through grit, faith, determination, and an unwavering belief that every setback can become
-    a comeback, John rebuilt his life and founded <strong>Lost Limb Riders</strong>—a nonprofit
-    organization dedicated to helping amputees and their families reclaim freedom, confidence,
-    independence, and purpose.
-  </p>
-
-  <p>
-    John's keynote is emotional, humorous, brutally honest, and deeply inspiring.
-    Audiences don't simply hear his story—they see themselves in it.
-    They leave believing they can overcome disability, trauma, addiction, grief,
-    mental health struggles, career setbacks, and life's toughest obstacles.
-  </p>
-
-  <hr>
-
-  <h4>What Your Audience Will Learn</h4>
-
-  <ul class="speaker-list">
-    <li>Replace excuses with action.</li>
-    <li>Build resilience one decision at a time.</li>
-    <li>Turn adversity into opportunity.</li>
-    <li>Develop purpose that is stronger than fear.</li>
-    <li>Why <strong>"I Can. I Will."</strong> is more than a slogan—it's a mindset.</li>
-    <li>How ordinary people accomplish extraordinary things by refusing to quit.</li>
-  </ul>
-
-  <hr>
-
-  <h4>Perfect For</h4>
-
-  <div class="two-column">
-    <ul class="speaker-list">
-      <li>Hospitals & Rehabilitation Centers</li>
-      <li>Healthcare Conferences</li>
-      <li>Nonprofit Organizations</li>
-      <li>Schools & Universities</li>
-      <li>Veterans Organizations</li>
-      <li>Corporate Leadership Events</li>
-    </ul>
-
-    <ul class="speaker-list">
-      <li>Recovery & Addiction Programs</li>
-      <li>Churches & Faith-Based Events</li>
-      <li>Motorcycle Rallies & Charity Events</li>
-      <li>Disability Advocacy Organizations</li>
-      <li>First Responders</li>
-      <li>Community Organizations</li>
-    </ul>
-  </div>
-
-  <hr>
-
-  <h4>More Than a Motivational Speaker</h4>
-
-  <p>
-    John doesn't deliver rehearsed clichés or empty motivation.
-  </p>
-
-  <p>
-    He delivers a message earned through experience—one that challenges people
-    to stop focusing on what they've lost and start discovering what's still
-    possible.
-  </p>
-
-  <div class="quote-box">
-    <h2>"I Can. I Will."</h2>
-    <p>
-      Because the only word that doesn't belong in your vocabulary...
-      <strong>is "can't."</strong>
-    </p>
-  </div>
-
-  <a class="btn btn-primary" href="tel:15158905765">
-    Book John Thompson • Call 515-890-5765
-  </a>
-
-</div>
-    <aside class="panel book-feature" aria-labelledby="buy-book-title">
-      <div class="book-card">
+<aside class="panel book-feature" aria-labelledby="buy-book-title">
+    <div class="book-card">
         <img class="book-cover" src="assets/icaniwill.png" alt="I Can I Will book cover by John Thompson">
+
         <div>
-          <h2 id="buy-book-title">Buy John’s <span class="orange">Book</span></h2>
-          <p><b>I Can. I Will.</b> is John Thompson’s autobiography about surviving limb loss, fighting through pain and doubt, leaning on faith and family, and turning a life-changing setback into the Lost Limb Riders mission.</p>
-          <p>The cover captures grit, road-tested resolve, and the promise that amputees can keep moving forward with purpose.</p>
-          <a class="btn btn-primary" href="tel:15158905765">Call 515-890-5765</a>
+            <h2 id="buy-book-title">Buy John’s <span class="orange">Book</span></h2>
+
+            <p><b>I Can. I Will.</b> is John Thompson’s autobiography about surviving limb loss, fighting through pain and doubt, leaning on faith and family, and turning a life-changing setback into the Lost Limb Riders mission.</p>
+
+            <p>The cover captures grit, road-tested resolve, and the promise that amputees can keep moving forward with purpose.</p>
+
+            <a class="btn btn-primary" href="tel:15158905765">Call 515‑890‑5765</a>
         </div>
-      </div>
-    </aside>
-  </div>
-</section>
+    </div>
+</aside>
+
 <section id="guestbook">
-  <div class="wrap split">
-    <div class="panel">
-      <h2 class="section-title">Guest <span class="orange">Book</span></h2>
-      <p class="lead">Leave a message of support, share your ride story, or encourage another amputee who needs to hear they are not alone.</p>
-      <form id="guestbookForm">
-        <div class="form">
-          <input id="guestName" placeholder="Your name" required>
-          <input id="guestLocation" placeholder="City / chapter / optional">
-          <textarea id="guestMessage" placeholder="Write your guest book message" required></textarea>
-          <button>Sign the Guest Book</button>
-          <div id="guestStatus" class="status" role="status" aria-live="polite"></div>
+    <div class="wrap split">
+
+        <div class="panel">
+            <h2 class="section-title">Guest <span class="orange">Book</span></h2>
+
+            <p class="lead">Leave a message of support, share your ride story, or encourage another amputee who needs to hear they are not alone.</p>
+
+            <form id="guestbookForm">
+                <div class="form">
+                    <input id="guestName" placeholder="Your name" required>
+                    <input id="guestLocation" placeholder="City / chapter / optional">
+                    <textarea id="guestMessage" placeholder="Write your guest book message" required></textarea>
+
+                    <button>Sign the Guest Book</button>
+
+                    <div id="guestStatus" class="status" role="status" aria-live="polite"></div>
+                </div>
+            </form>
         </div>
-      </form>
+
+        <div class="card">
+            <h3>Saved Messages</h3>
+
+            <p>Guest book entries are saved for the site so visitors can read messages from the whole Lost Limb Riders community.</p>
+
+            <div class="mini-actions admin-only" aria-label="Guest book admin actions">
+                <button id="downloadGuestbook" type="button">Download Guest Book</button>
+                <button id="clearGuestbook" type="button" class="btn-secondary">Clear Entries</button>
+            </div>
+
+            <div id="guestbookList" class="guestbook-list"></div>
+        </div>
+
     </div>
-    <div class="card">
-      <h3>Saved Messages</h3>
-      <p>Guest book entries are saved for the site so visitors can read messages from the whole Lost Limb Riders community.</p>
-      <div class="mini-actions admin-only" aria-label="Guest book admin actions">
-        <button id="downloadGuestbook" type="button">Download Guest Book</button>
-        <button id="clearGuestbook" type="button" class="btn-secondary">Clear Entries</button>
-      </div>
-      <div id="guestbookList" class="guestbook-list"></div>
-    </div>
-  </div>
 </section>
-
-<section id="book-show">
-  <div class="wrap panel">
-    <h2 class="section-title">Book John For <span class="orange">A Show</span></h2>
-    <p class="lead">Send event details for a keynote, benefit ride, school assembly, rehab center program, veteran event, or motorcycle show.</p>
-    <form id="bookingForm">
-      <div class="form">
-        <input name="name" placeholder="Contact name" required>
-        <input name="contact" placeholder="Phone or email" required>
-        <input name="organization" placeholder="Organization / venue">
-        <input name="date" placeholder="Preferred event date">
-        <select name="eventType" class="full">
-          <option>Keynote / speaking event</option>
-          <option>Motorcycle show or benefit ride</option>
-          <option>Hospital / rehab center program</option>
-          <option>School / veteran / community event</option>
-        </select>
-        <textarea name="details" placeholder="Tell us about the audience, location, budget, and what you need"></textarea>
-        <button>Save Booking Request</button>
-        <div id="bookingStatus" class="status" role="status" aria-live="polite"></div>
-      </div>
-    </form>
-    <p class="help">Requests are prepared as an email so you can send them directly to Lost Limb Riders.</p>
-  </div>
-</section>
-<footer>
-  LOST LIMB RIDERS Motorcycle Club • Ride With Purpose • Support Amputees • Build Community • Never Give Up
-</footer>
-
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const target = document.querySelector(a.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    target.scrollIntoView({behavior:'smooth'});
-  });
-});
-
-const GUESTBOOK_API = 'api/guestbook.php';
-const ADMIN_PARAMS = new URLSearchParams(window.location.search);
-const ADMIN_KEY = ADMIN_PARAMS.get('key') || '';
-const IS_ADMIN = ADMIN_PARAMS.get('admin') === '1' && ADMIN_KEY;
-
-if (IS_ADMIN) {
-  document.body.classList.add('guestbook-admin');
-}
-
-function mailTo(subject, body) {
-  window.location.href = `mailto:lostlimbriders@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
-function formData(form) {
-  return Object.fromEntries(new FormData(form).entries());
-}
-
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;'
-  }[char]));
-}
-
-async function guestbookRequest(action = 'list', options = {}) {
-  const url = new URL(GUESTBOOK_API, window.location.href);
-  url.searchParams.set('action', action);
-  if (IS_ADMIN) url.searchParams.set('key', ADMIN_KEY);
-  const response = await fetch(url, options);
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok || data.error) {
-    throw new Error(data.error || 'Guest book request failed.');
-  }
-  return data;
-}
-
-function renderGuestbookEntries(entries) {
-  const list = document.getElementById('guestbookList');
-  if (!list) return;
-  list.innerHTML = entries.length ? entries.map(entry => `
-    <div class="guestbook-entry">
-      <b>${escapeHtml(entry.name)}</b>${entry.location ? ` — ${escapeHtml(entry.location)}` : ''}
-      <p>${escapeHtml(entry.message)}</p>
-      <small>${new Date(entry.savedAt).toLocaleString()}</small>
-    </div>
-  `).join('') : '<p class="help">No guest book entries yet. Be the first to sign.</p>';
-}
-
-async function renderGuestbook() {
-  const list = document.getElementById('guestbookList');
-  if (!list) return;
-  list.innerHTML = '<p class="help">Loading guest book entries…</p>';
-  try {
-    const data = await guestbookRequest('list');
-    renderGuestbookEntries(data.entries || []);
-  } catch (error) {
-    list.innerHTML = `<p class="help">${escapeHtml(error.message)} Please try again later.</p>`;
-  }
-}
-
-document.getElementById('guestbookForm')?.addEventListener('submit', async event => {
-  event.preventDefault();
-  const status = document.getElementById('guestStatus');
-  const entry = {
-    name: document.getElementById('guestName').value.trim(),
-    location: document.getElementById('guestLocation').value.trim(),
-    message: document.getElementById('guestMessage').value.trim()
-  };
-  status.textContent = 'Saving your message…';
-  try {
-    await guestbookRequest('add', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(entry)
-    });
-    event.target.reset();
-    status.textContent = 'Saved — thank you for signing the guest book.';
-    renderGuestbook();
-  } catch (error) {
-    status.textContent = error.message;
-  }
-});
-
-document.getElementById('downloadGuestbook')?.addEventListener('click', () => {
-  if (!IS_ADMIN) return;
-  window.location.href = `${GUESTBOOK_API}?action=download&key=${encodeURIComponent(ADMIN_KEY)}`;
-});
-
-document.getElementById('clearGuestbook')?.addEventListener('click', async () => {
-  if (!IS_ADMIN || !confirm('Clear saved guest book entries from the site?')) return;
-  await guestbookRequest('clear', { method: 'POST' });
-  renderGuestbook();
-});
-
-document.getElementById('bookingForm')?.addEventListener('submit', event => {
-  event.preventDefault();
-  const data = formData(event.currentTarget);
-  document.getElementById('bookingStatus').textContent = 'Opening your email app so you can send it now.';
-  mailTo('Book John Thompson for a show', Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n'));
-});
-
-renderGuestbook();
-
-</script>
 
 </body>
 </html>
+
